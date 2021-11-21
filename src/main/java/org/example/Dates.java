@@ -74,12 +74,15 @@ public class Dates {
     public void printWithFormatter() {
         SimpleDateFormat sdf = new SimpleDateFormat("E");
         SimpleDateFormat mon = new SimpleDateFormat("MMM");
+        SimpleDateFormat dayn = new SimpleDateFormat("D");
+
         String dayName = sdf.format(calendar.DAY_OF_WEEK);
         String monthName = mon.format(calendar.MONTH);
+        String day = dayn.format(calendar.DAY_OF_YEAR);
 
         Formatter format = new Formatter();
-        System.out.println(format.format("Name of Day: %s; Name of month: %d; AM/PM: %s; Time: %d:%d",
-                dayName, date.getMonth(), timeType, date.getHours(), date.getMinutes()));
+        System.out.println(format.format("Name of Day: %s; Day in year: %d; Name of month: %s; DayAM/PM: %s; Time: %d:%d",
+                dayName, day, monthName, date.getTime(), date.getHours(), date.getMinutes()));
     }
 
 
